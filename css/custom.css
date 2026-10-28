@@ -29,6 +29,12 @@ button.btn {
 .hero-copy .cta-row { justify-content: flex-start; }
 .hero-copy .chips { justify-content: flex-start; }
 
+.must-watch-heading {
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
 .hero-video { width: 100%; }
 .video-box {
   position: relative;
