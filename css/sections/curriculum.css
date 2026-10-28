@@ -1,0 +1,14 @@
+/* ===== CURRICULUM (modules) ===== */
+.modules{max-width:760px;margin:36px auto 0}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:.3s}
+.mod[open]{border-color:rgba(139,92,246,.5);box-shadow:0 8px 30px rgba(139,92,246,.12)}
+.mod summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:16px 20px;font-weight:600;font-size:14.5px}
+.mod summary::-webkit-details-marker{display:none}
+.mod .no{flex:none;width:34px;height:34px;border-radius:9px;background:rgba(139,92,246,.18);color:var(--pl);display:grid;place-items:center;font-weight:800;font-size:13px}
+.mod .t{flex:1}
+.mod .t small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.mod summary::after{content:"+";flex:none;width:24px;height:24px;border-radius:50%;background:var(--p);display:grid;place-items:center;font-size:16px}
+.mod[open] summary::after{content:"–"}
+.mod ul{padding:0 22px 16px 68px}
+.mod li{list-style:none;color:var(--muted);font-size:13px;padding:4px 0}
+.mod li::before{content:"▸  ";color:var(--pl)}

@@ -1,0 +1,16 @@
+/* ===== DESIGN TOKENS (colors) – change theme from here ===== */
+:root{
+  --bg:#07070d;
+  --card:#0d0d17;
+  --card2:#11111d;
+  --line:rgba(255,255,255,.07);
+  --text:#f5f4fb;
+  --muted:#8e8ca6;
+  --p:#8b5cf6;
+  --p2:#7c3aed;
+  --pl:#a78bfa;
+  --glow:rgba(139,92,246,.5);
+  --yellow:#facc15;
+  --green:#22c55e;
+  --red:#f87171;
+}

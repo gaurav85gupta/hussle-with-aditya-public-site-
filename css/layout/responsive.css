@@ -1,0 +1,18 @@
+/* ===== MOBILE / TABLET ===== */
+@media(max-width:860px){
+  .fgrid,.grid3,.two,.tgrid,.compare,.bonus-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr;text-align:center;padding:24px}
+  .about ul{grid-template-columns:1fr;text-align:left}
+  .price{font-size:84px}
+  .frame{padding:14px}
+  .section{padding:60px 0}
+  .sticky{display:flex}
+
+  .burger{display:block}
+  .nav{position:relative}
+  .links{display:none;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:0;background:rgba(14,13,26,.97);border:1px solid var(--line);border-radius:14px;padding:8px}
+  .links.open{display:flex}
+  .links a{padding:12px 14px;font-size:14px}
+  .nav .btn{display:none}
+}

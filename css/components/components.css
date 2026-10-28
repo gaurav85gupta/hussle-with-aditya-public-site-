@@ -1,0 +1,22 @@
+/* ===== COMPONENTS: buttons, cards, reveal, progress bar ===== */
+/* buttons */
+.btn{position:relative;overflow:hidden;display:inline-block;text-align:center;text-decoration:none;color:#fff;font-family:inherit;font-weight:700;font-size:15px;padding:13px 26px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);background:linear-gradient(180deg,#9a6bff,var(--p2));box-shadow:0 6px 28px var(--glow),inset 0 1px 0 rgba(255,255,255,.25);cursor:pointer;transition:.25s}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:sheen 3.2s infinite}
+@keyframes sheen{0%{left:-80%}60%,100%{left:140%}}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 38px var(--glow),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.full{display:block;width:100%}
+.btn.lg{font-size:17px;padding:16px 32px}
+.btn.ghost{background:transparent;border:1px solid rgba(139,92,246,.5);box-shadow:none}
+.pulse{animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--glow)}70%{box-shadow:0 0 0 16px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.3s}
+.card.hover:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55);box-shadow:0 14px 44px rgba(139,92,246,.18)}
+.ic{width:40px;height:40px;border-radius:11px;background:linear-gradient(180deg,#9a6bff,var(--p2));display:grid;place-items:center;font-size:18px;font-weight:800;margin-bottom:14px;box-shadow:0 4px 16px rgba(139,92,246,.4)}
+
+/* scroll reveal + progress bar */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s}
+.reveal.show{opacity:1;transform:none}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--p),#ec4899);width:0;z-index:90}

@@ -1,0 +1,9 @@
+/* ===== FAQ ===== */
+.faq{max-width:740px;margin:32px auto 0}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px;transition:.3s}
+.faq details[open]{border-color:rgba(139,92,246,.45)}
+.faq summary{cursor:pointer;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:24px;height:24px;border-radius:50%;background:var(--p);display:grid;place-items:center;font-size:16px}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);font-size:13.5px;margin-top:10px}

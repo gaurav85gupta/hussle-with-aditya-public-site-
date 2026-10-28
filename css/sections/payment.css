@@ -1,0 +1,19 @@
+/* ===== PAYMENT BOX + FINAL CTA ===== */
+.pay{max-width:490px;margin:54px auto 0;background:linear-gradient(180deg,rgba(139,92,246,.22),var(--card) 45%);border:1.5px solid rgba(139,92,246,.5);border-radius:24px;padding:30px 26px;box-shadow:0 0 80px rgba(139,92,246,.28);position:relative}
+.pay::before{content:"";position:absolute;top:-2px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,transparent,#c4b5fd,transparent);box-shadow:0 0 20px 2px var(--glow)}
+.pay h3{text-align:center;font-size:22px}
+.pay .s{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
+.sum{display:flex;justify-content:space-between;align-items:center;margin:20px 0;padding:14px 16px;background:#08080f;border-radius:12px;border:1px solid var(--line);font-size:14px}
+.sum b{font-size:30px}.sum s{color:var(--muted);margin-right:8px;font-size:15px}
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.methods input{display:none}
+.methods label{display:block;text-align:center;padding:13px 8px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-size:13.5px;font-weight:600;transition:.2s;background:#08080f}
+.methods label:hover{border-color:rgba(139,92,246,.5)}
+.methods input:checked+label{border-color:var(--p);background:rgba(139,92,246,.18);box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.badges span{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:#cfcde6;background:var(--card);border:1px solid var(--line);padding:7px 13px;border-radius:99px}
+.badges span::before{content:"✓";display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:800}
+
+.final{text-align:center;padding:54px 26px;border-radius:28px;background:linear-gradient(160deg,rgba(139,92,246,.3),var(--card) 60%);border:1.5px solid rgba(139,92,246,.4);box-shadow:0 0 90px rgba(139,92,246,.22)}
+.final h2{margin-bottom:10px}
+.final .btn{margin-top:26px}
