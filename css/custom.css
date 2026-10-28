@@ -30,6 +30,7 @@ button.btn {
 .hero-copy .chips { justify-content: flex-start; }
 
 .must-watch-heading {
+  font-family: 'Sora', 'Manrope', sans-serif;
   font-weight: 700;
   line-height: 1.32;       /* slightly open, not too loose */
   letter-spacing: -0.01em;
