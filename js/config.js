@@ -6,7 +6,7 @@ const CONFIG = {
   // Local:      http://localhost:4000/api
   // Production: https://your-api-domain.com/api
   // The site origin must also be listed in the server's CORS_ALLOWED_ORIGINS.
-  API_BASE_URL: "http://localhost:4000/api",
+  API_BASE_URL: "https://hussle-with-aditya.onrender.com/api",
 
   // WhatsApp number (country code + number, digits only) used on the thank-you page.
   WHATSAPP_NUMBER: "917052866594",
