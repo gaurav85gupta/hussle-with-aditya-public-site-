@@ -7,7 +7,7 @@
   burger.addEventListener('click',()=>links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20));
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20),{passive:true});
 
   // highlight current section in menu
   const secs=[...links.querySelectorAll('a')].map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);

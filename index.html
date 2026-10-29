@@ -11,14 +11,16 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E⚡%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/diwali.css"> <!-- DIWALI: delete this line + class="diwali" on <body> after Diwali -->
 </head>
-<body>
+<body class="diwali">
+<canvas class="dw dw-dust" aria-hidden="true"></canvas>
 <div class="progress" id="progress"></div>
 
 <!-- ============ TOP TICKER ============ -->
 <div class="ticker"><div class="move">
-  <span>🔥 Special ₹99 Offer</span><span>♾️ Lifetime Access</span><span>🚀 Beginner Friendly</span><span>🎓 Certificate Included</span><span>💬 Doubt Support</span><span>⚡ Instant Access</span>
-  <span>🔥 Special ₹99 Offer</span><span>♾️ Lifetime Access</span><span>🚀 Beginner Friendly</span><span>🎓 Certificate Included</span><span>💬 Doubt Support</span><span>⚡ Instant Access</span>
+  <span class="dw">🪔 Happy Diwali</span><span>🔥 Special ₹99 Offer</span><span>♾️ Lifetime Access</span><span>🚀 Beginner Friendly</span><span>🎓 Certificate Included</span><span>💬 Doubt Support</span><span>⚡ Instant Access</span>
+  <span class="dw">🪔 Happy Diwali</span><span>🔥 Special ₹99 Offer</span><span>♾️ Lifetime Access</span><span>🚀 Beginner Friendly</span><span>🎓 Certificate Included</span><span>💬 Doubt Support</span><span>⚡ Instant Access</span>
 </div></div>
 
 <!-- ============ NAVBAR ============ -->
@@ -26,7 +28,7 @@
   <div class="nav">
     <a href="#top" class="logo">Hustle <span>with Aditya</span></a>
     <div class="links" id="links">
-      <a href="#reviews">Reviews</a><a href="#pay">Pricing</a>
+      <a href="#reviews">Testimonial</a><a href="#reviews">Reviews</a><a href="#pay">Pricing</a>
     </div>
     <a href="#pay" class="btn btn-gold">Book Now<span class="long"> for Just ₹99</span></a>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
@@ -41,10 +43,43 @@
 <!-- ======================================================= -->
 <section class="hero hero-screen" id="top">
   <div class="blob a"></div><div class="blob b"></div>
+  <!-- DIWALI: warm light + light sweep + hidden rangoli -->
+  <div class="dw dw-glow" aria-hidden="true"></div>
+  <div class="dw dw-diya hero-diya" aria-hidden="true"><svg viewBox="0 0 120 90" focusable="false"><defs>
+<linearGradient id="tch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8683A"/><stop offset=".55" stop-color="#9A4524"/><stop offset="1" stop-color="#5E2A14"/></linearGradient>
+<linearGradient id="rmh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8F4020"/><stop offset=".35" stop-color="#D98B5A"/><stop offset=".6" stop-color="#C46F42"/><stop offset="1" stop-color="#7C3419"/></linearGradient>
+<radialGradient id="olh" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#F2B24A"/><stop offset="1" stop-color="#7A3E12"/></radialGradient>
+<linearGradient id="flh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7A0" stop-opacity=".9"/><stop offset=".5" stop-color="#FFB236"/><stop offset="1" stop-color="#F26B10"/></linearGradient></defs>
+<ellipse cx="60" cy="84" rx="30" ry="4" fill="#000" opacity=".35"/>
+<path d="M14 44C18 70 40 80 60 80S102 70 106 44C92 54 28 54 14 44Z" fill="url(#tch)"/>
+<path d="M22 58C40 66 80 66 98 58" fill="none" stroke="#C9A45C" stroke-width="1.3" opacity=".75"/>
+<path d="M30 66C46 72 74 72 90 66" fill="none" stroke="#E5CD91" stroke-width=".8" stroke-dasharray="1.5 3.5" opacity=".6"/>
+<ellipse cx="60" cy="44" rx="48" ry="12" fill="url(#rmh)"/>
+<ellipse cx="60" cy="44.5" rx="40" ry="8.6" fill="url(#olh)"/>
+<path d="M18 41C34 34 86 34 102 41" fill="none" stroke="#FFD9AE" stroke-width="1" opacity=".5"/>
+<path d="M60 45Q59 41 60 36Q61 41 60 45Z" fill="#2a160a"/>
+<g class="dw-fl"><path d="M60 8C69 20 73 30 60 42C47 30 51 20 60 8Z" fill="url(#flh)"/><path d="M60 22C65 29 65 35 60 41C55 35 55 29 60 22Z" fill="#FFF6D6"/></g></svg></div>
+  <div class="dw dw-diya hero-diya2" aria-hidden="true"><svg viewBox="0 0 120 90" focusable="false"><defs>
+<linearGradient id="tcr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8683A"/><stop offset=".55" stop-color="#9A4524"/><stop offset="1" stop-color="#5E2A14"/></linearGradient>
+<linearGradient id="rmr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8F4020"/><stop offset=".35" stop-color="#D98B5A"/><stop offset=".6" stop-color="#C46F42"/><stop offset="1" stop-color="#7C3419"/></linearGradient>
+<radialGradient id="olr" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#F2B24A"/><stop offset="1" stop-color="#7A3E12"/></radialGradient>
+<linearGradient id="flr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7A0" stop-opacity=".9"/><stop offset=".5" stop-color="#FFB236"/><stop offset="1" stop-color="#F26B10"/></linearGradient></defs>
+<ellipse cx="60" cy="84" rx="30" ry="4" fill="#000" opacity=".35"/>
+<path d="M14 44C18 70 40 80 60 80S102 70 106 44C92 54 28 54 14 44Z" fill="url(#tcr)"/>
+<path d="M22 58C40 66 80 66 98 58" fill="none" stroke="#C9A45C" stroke-width="1.3" opacity=".75"/>
+<path d="M30 66C46 72 74 72 90 66" fill="none" stroke="#E5CD91" stroke-width=".8" stroke-dasharray="1.5 3.5" opacity=".6"/>
+<ellipse cx="60" cy="44" rx="48" ry="12" fill="url(#rmr)"/>
+<ellipse cx="60" cy="44.5" rx="40" ry="8.6" fill="url(#olr)"/>
+<path d="M18 41C34 34 86 34 102 41" fill="none" stroke="#FFD9AE" stroke-width="1" opacity=".5"/>
+<path d="M60 45Q59 41 60 36Q61 41 60 45Z" fill="#2a160a"/>
+<g class="dw-fl"><path d="M60 8C69 20 73 30 60 42C47 30 51 20 60 8Z" fill="url(#flr)"/><path d="M60 22C65 29 65 35 60 41C55 35 55 29 60 22Z" fill="#FFF6D6"/></g></svg></div>
+  <div class="dw dw-sweep" aria-hidden="true"></div>
+  <div class="dw dw-rgwrap hero-rg" aria-hidden="true"><svg class="dw-rg" viewBox="-100 -100 200 200" fill="none" stroke="currentColor" stroke-width=".6" stroke-linecap="round"><g><circle class="d" pathLength="1" style="--i:1" r="92"/><circle class="d" pathLength="1" style="--i:2" r="86"/><circle class="d" pathLength="1" style="--i:3" r="30"/><path class="d" pathLength="1" style="--i:4" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(0)"/><path class="d" pathLength="1" style="--i:5" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(45)"/><path class="d" pathLength="1" style="--i:6" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(90)"/><path class="d" pathLength="1" style="--i:7" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(135)"/><path class="d" pathLength="1" style="--i:8" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(180)"/><path class="d" pathLength="1" style="--i:9" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(225)"/><path class="d" pathLength="1" style="--i:10" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(270)"/><path class="d" pathLength="1" style="--i:11" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(315)"/><path class="d" pathLength="1" style="--i:12" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(22.5)"/><path class="d" pathLength="1" style="--i:13" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(67.5)"/><path class="d" pathLength="1" style="--i:14" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(112.5)"/><path class="d" pathLength="1" style="--i:15" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(157.5)"/><path class="d" pathLength="1" style="--i:16" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(202.5)"/><path class="d" pathLength="1" style="--i:17" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(247.5)"/><path class="d" pathLength="1" style="--i:18" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(292.5)"/><path class="d" pathLength="1" style="--i:19" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(337.5)"/></g><g fill="currentColor" stroke="none"><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(0.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(22.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(45.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(67.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(90.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(112.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(135.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(157.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(180.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(202.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(225.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(247.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(270.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(292.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(315.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(337.5)"/></g></svg></div>
   <div class="wrap">
     <!-- HERO: text on left, video on right -->
     <div class="hero-split">
       <div class="hero-copy">
+        <div class="dw dw-offer" data-offer><span class="dw-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C12.8 8 16 11.2 24 12C16 12.8 12.8 16 12 24C11.2 16 8 12.8 0 12C8 11.2 11.2 8 12 0Z"/></svg>SPECIAL DIWALI OFFER</span><span class="dw-sub">Celebrate Diwali with something special.</span></div>
         <h1 class="must-watch-heading">Must Watch This Video Before Paying <span class="gt">₹99</span></h1>
         <p class="lead">Go beyond theory. Learn practical skills that actually get you results — at the price of one cup of tea.</p>
         <div class="cta-row">
@@ -75,15 +110,20 @@
   </div>
 </section>
 
+<!-- DIWALI: offer strip below hero -->
+<div class="dw dw-strip" data-offer><span>🪔 DIWALI SPECIAL — Learn More, Pay Just ₹99</span></div>
+
 <!-- ======================================================= -->
 <!-- SCREEN 2 : PRICE + WHAT'S INCLUDED + STATS               -->
 <!-- ======================================================= -->
 <section class="hero hero-screen offer-screen" id="offer">
+  <div class="dw dw-orn br" aria-hidden="true"></div>
   <div class="wrap">
     <div class="frame reveal">
+      <i class="dw dw-spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C12.8 8 16 11.2 24 12C16 12.8 12.8 16 12 24C11.2 16 8 12.8 0 12C8 11.2 11.2 8 12 0Z"/></svg></i>
       <div class="fgrid">
         <div class="pricebox">
-          <div class="tag" data-offer>⚡ SPECIAL OFFER</div>
+          <div class="tag" data-offer>⚡ SPECIAL<span class="dw"> DIWALI</span> OFFER</div>
           <div class="old" data-compare data-list-price>₹1,999</div>
           <div class="price"><sup data-cur>₹</sup><span data-price-num>99</span></div>
           <div class="save" data-compare data-save>95% OFF – You save ₹1,900</div>
@@ -126,7 +166,9 @@
 <!-- ======================================================= -->
 <!-- PAGE 3 : TESTIMONIALS + PAYMENT                         -->
 <!-- ======================================================= -->
+<div class="dw dw-divider" aria-hidden="true"></div>
 <section class="section social-proof" id="reviews">
+  <div class="dw dw-orn tl" aria-hidden="true"></div>
   <div class="wrap">
     <div id="tWrap" hidden>
       <div class="label">Social Proof</div>
@@ -137,10 +179,30 @@
   </div>
 </section>
 
+<div class="dw dw-divider" aria-hidden="true"></div>
+
 <section class="section" id="payment-section" style="padding-top:30px">
+  <div class="dw dw-glow g2" aria-hidden="true"></div>
+  <div class="dw dw-diya pay-diya" aria-hidden="true"><svg viewBox="0 0 120 90" focusable="false"><defs>
+<linearGradient id="tcp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8683A"/><stop offset=".55" stop-color="#9A4524"/><stop offset="1" stop-color="#5E2A14"/></linearGradient>
+<linearGradient id="rmp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8F4020"/><stop offset=".35" stop-color="#D98B5A"/><stop offset=".6" stop-color="#C46F42"/><stop offset="1" stop-color="#7C3419"/></linearGradient>
+<radialGradient id="olp" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#F2B24A"/><stop offset="1" stop-color="#7A3E12"/></radialGradient>
+<linearGradient id="flp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7A0" stop-opacity=".9"/><stop offset=".5" stop-color="#FFB236"/><stop offset="1" stop-color="#F26B10"/></linearGradient></defs>
+<ellipse cx="60" cy="84" rx="30" ry="4" fill="#000" opacity=".35"/>
+<path d="M14 44C18 70 40 80 60 80S102 70 106 44C92 54 28 54 14 44Z" fill="url(#tcp)"/>
+<path d="M22 58C40 66 80 66 98 58" fill="none" stroke="#C9A45C" stroke-width="1.3" opacity=".75"/>
+<path d="M30 66C46 72 74 72 90 66" fill="none" stroke="#E5CD91" stroke-width=".8" stroke-dasharray="1.5 3.5" opacity=".6"/>
+<ellipse cx="60" cy="44" rx="48" ry="12" fill="url(#rmp)"/>
+<ellipse cx="60" cy="44.5" rx="40" ry="8.6" fill="url(#olp)"/>
+<path d="M18 41C34 34 86 34 102 41" fill="none" stroke="#FFD9AE" stroke-width="1" opacity=".5"/>
+<path d="M60 45Q59 41 60 36Q61 41 60 45Z" fill="#2a160a"/>
+<g class="dw-fl"><path d="M60 8C69 20 73 30 60 42C47 30 51 20 60 8Z" fill="url(#flp)"/><path d="M60 22C65 29 65 35 60 41C55 35 55 29 60 22Z" fill="#FFF6D6"/></g></svg></div>
+  <div class="dw dw-rgwrap pay-rg" aria-hidden="true"><svg class="dw-rg" viewBox="-100 -100 200 200" fill="none" stroke="currentColor" stroke-width=".6" stroke-linecap="round"><g><circle class="d" pathLength="1" style="--i:1" r="92"/><circle class="d" pathLength="1" style="--i:2" r="86"/><circle class="d" pathLength="1" style="--i:3" r="30"/><path class="d" pathLength="1" style="--i:4" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(0)"/><path class="d" pathLength="1" style="--i:5" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(45)"/><path class="d" pathLength="1" style="--i:6" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(90)"/><path class="d" pathLength="1" style="--i:7" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(135)"/><path class="d" pathLength="1" style="--i:8" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(180)"/><path class="d" pathLength="1" style="--i:9" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(225)"/><path class="d" pathLength="1" style="--i:10" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(270)"/><path class="d" pathLength="1" style="--i:11" d="M0-34C12-52 12-72 0-88C-12-72-12-52 0-34Z" transform="rotate(315)"/><path class="d" pathLength="1" style="--i:12" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(22.5)"/><path class="d" pathLength="1" style="--i:13" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(67.5)"/><path class="d" pathLength="1" style="--i:14" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(112.5)"/><path class="d" pathLength="1" style="--i:15" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(157.5)"/><path class="d" pathLength="1" style="--i:16" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(202.5)"/><path class="d" pathLength="1" style="--i:17" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(247.5)"/><path class="d" pathLength="1" style="--i:18" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(292.5)"/><path class="d" pathLength="1" style="--i:19" d="M0-40C6-50 6-60 0-68C-6-60-6-50 0-40Z" transform="rotate(337.5)"/></g><g fill="currentColor" stroke="none"><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(0.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(22.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(45.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(67.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(90.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(112.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(135.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(157.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(180.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(202.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(225.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(247.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(270.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(292.5)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(315.0)"/><circle class="dt" r="1.3" cx="0" cy="-79" transform="rotate(337.5)"/></g></svg></div>
   <div class="wrap">
     <!-- PAYMENT -->
     <div class="pay reveal" id="pay">
+      <div class="dw dw-orn tr" aria-hidden="true"></div>
+      <div class="dw dw-offer compact" data-offer><span class="dw-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C12.8 8 16 11.2 24 12C16 12.8 12.8 16 12 24C11.2 16 8 12.8 0 12C8 11.2 11.2 8 12 0Z"/></svg>SPECIAL DIWALI OFFER</span><span class="dw-sub">A festive offer, specially for this Diwali.</span></div>
       <h3>Ready to Start? Complete Payment 🔒</h3>
       <p class="s">Fill in your details to continue.</p>
       <div class="sum"><span>Hustle with Aditya – Full Course</span><span><s data-compare data-list-price>₹1,999</s><b>₹99</b></span></div>
@@ -185,7 +247,7 @@
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section style="padding:10px 0 20px">
+<section class="dw-sec-final" style="padding:10px 0 20px">
   <div class="wrap">
     <div class="final reveal">
       <h2>Don't Wait. Start Your Hustle Today!</h2>
@@ -197,6 +259,8 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
+  <span class="dw dw-fdia" aria-hidden="true"></span>
+  <div class="dw dw-orn tr" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sf-top">
       <div class="sf-brand">
@@ -228,6 +292,7 @@
 
 <div class="sticky"><div><b>₹99</b><s data-compare data-list-price>₹1,999</s></div><a href="#pay" class="btn">Book Now</a></div>
 
+
 <!-- scripts (config.js must be first) -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="js/config.js"></script>
@@ -243,5 +308,8 @@
 <script src="js/pop.js"></script>
 <script src="js/details.js"></script>
 <script src="js/menu-close.js"></script>
+<script src="js/diwali.js" defer></script> <!-- DIWALI -->
+<script src="js/diwali-lights.js" defer></script> <!-- DIWALI LIGHTS -->
+
 </body>
 </html>

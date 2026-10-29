@@ -1,0 +1,333 @@
+/* =========================================================
+   QUIET LUXURY DIWALI  (css/diwali.css)
+   ON : <body class="diwali">   OFF : class="diwali" hata do
+   1 Light sweep  2 Hidden rangoli  3 One sparkle  4 Warm ambient light
+   ========================================================= */
+body:not(.diwali) .dw { display: none !important; }
+body.diwali #top .wrap, body.diwali .offer-screen .wrap, body.diwali #payment-section .wrap { position: relative; z-index: 1; }
+body.diwali #top.hero { position: relative; overflow: hidden; }
+body.diwali #payment-section { position: relative; overflow-x: clip; }
+
+/* ---- Golden particles (poori site, ek fixed canvas; content ke peeche) ---- */
+body.diwali section, body.diwali footer { position: relative; z-index: 1; }
+.dw-dust { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+/* ---- SPECIAL DIWALI OFFER (hero = bada, payment = compact; dono ek hi design) ---- */
+.dw-offer { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; margin-bottom: 14px; }
+.dw-offer[hidden] { display: none; }
+.dw-pill { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px 7px 12px; border-radius: 999px;
+  font-weight: 800; font-size: 12.5px; letter-spacing: .14em; color: #2b1a05;
+  background: linear-gradient(135deg, #F1E2B4, #E5CD91 40%, #C9A45C);
+  box-shadow: 0 6px 22px rgba(201,164,92,.25), 0 0 0 1px rgba(255,248,225,.35) inset; animation: dwFadeIn .9s ease both; }
+.dw-pill svg { width: 12px; height: 12px; flex: none; }
+.dw-pill::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+  transform: translateX(-120%); animation: dwShim 1.6s ease 1.2s 1 both; }   /* sirf ek baar */
+.dw-sub { font-size: 13px; color: #e8dfc8; opacity: .85; }
+.dw-offer.compact { align-items: center; text-align: center; margin: 0 0 16px; }
+.dw-offer.compact .dw-pill { font-size: 11px; padding: 6px 13px 6px 10px; }
+.dw-offer.compact .dw-sub { font-size: 12px; }
+@keyframes dwFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes dwShim { to { transform: translateX(120%); } }
+@media (max-width: 900px) { .hero-copy .dw-offer { align-items: center; text-align: center; } }
+@media (max-width: 640px) { .dw-pill { font-size: 11.5px; letter-spacing: .1em; } }
+
+/* ---- Realistic diya (terracotta clay): hero ke neeche-left + payment ke side mein ---- */
+.dw-diya { --w: 76px; position: absolute; width: var(--w); z-index: 0; pointer-events: none; }
+.dw-diya svg { display: block; width: 100%; filter: drop-shadow(0 6px 8px rgba(0,0,0,.5)); }
+.dw-diya::before { content: ""; position: absolute; left: 50%; top: calc(var(--w) * -.74); width: calc(var(--w) * 2); aspect-ratio: 1; transform: translateX(-50%);
+  border-radius: 50%; background: radial-gradient(circle, rgba(255,176,60,.30), rgba(255,176,60,0) 62%); animation: dwGlow2 3.2s ease-in-out infinite; }
+.dw-fl { transform-box: fill-box; transform-origin: 50% 100%; animation: dwFlick 2s ease-in-out infinite; }
+.hero-diya { left: clamp(14px, 3vw, 48px); bottom: 14px; }
+.pay-diya { --w: 64px; left: calc(50% - 245px - 100px); bottom: 70px; }
+.pay-diya::before, .pay-diya .dw-fl { animation-delay: .9s; }
+@media (min-width: 901px) { .hero-diya { bottom: auto; top: min(calc(100vh - 230px), calc(100% - 82px)); } }
+@media (max-width: 900px) {
+  .pay-diya { display: none; }
+  body.diwali #top.hero { padding-bottom: 96px; }                 /* diya ke liye jagah, content ke neeche */
+  .hero-diya { --w: 56px; left: 14px; transform: none; bottom: 14px; }
+  .hero-diya2 { --w: 56px; right: 14px; bottom: 14px; }
+}
+@keyframes dwGlow2 { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+@keyframes dwFlick { 0%,100% { transform: scale(1) rotate(-1.5deg); } 30% { transform: scale(1.04,1.09) rotate(1.5deg); } 60% { transform: scale(.97,1.03) rotate(-1deg); } 80% { transform: scale(1.03,1.07) rotate(1deg); } }
+
+/* ---- 4. Ambient warm light (hero corner + payment ke paas, bahut halka) ---- */
+.dw-glow { position: absolute; left: -18%; bottom: -26%; width: min(70vw, 780px); aspect-ratio: 1; border-radius: 50%;
+  pointer-events: none; z-index: 0;
+  background: radial-gradient(circle, rgba(217,154,67,.13) 0%, rgba(201,164,92,.07) 38%, rgba(201,164,92,0) 68%);
+  animation: dwBreathe 14s ease-in-out infinite; }
+.dw-glow.g2 { left: auto; right: -22%; top: -8%; bottom: auto; width: min(60vw, 640px); animation: none; opacity: .8; }
+@keyframes dwBreathe { 0%,100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+
+/* ---- 1. Golden light sweep (hero + ek divider, kabhi-kabhi, alag timing) ---- */
+.dw-sweep { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.dw-sweep::before { content: ""; position: absolute; top: -20%; bottom: -20%; left: 0; width: 55%;
+  background: linear-gradient(100deg, rgba(201,164,92,0) 0%, rgba(229,205,145,.05) 25%, rgba(229,205,145,.11) 48%, rgba(217,154,67,.05) 70%, rgba(217,154,67,0) 100%);
+  transform: translateX(-110%) skewX(-14deg); opacity: 0; animation: dwSweepA 18s cubic-bezier(.45,0,.25,1) 3s infinite; }
+@keyframes dwSweepA { 0% { transform: translateX(-110%) skewX(-14deg); opacity: 0; } 12% { opacity: .6; }
+  17% { opacity: 1; } 24% { opacity: .5; } 30%,100% { transform: translateX(210%) skewX(-14deg); opacity: 0; } }
+/* divider: gold line + centre diamond, scroll par ek baar reveal, phir kabhi-kabhi halka shimmer */
+
+.dw-divider { position: relative; z-index: 1; width: min(560px, 82%); height: 11px; margin: 14px auto; }
+.dw-divider::before { content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 1px;
+  background: linear-gradient(90deg, transparent, #FFF1B8, transparent) no-repeat -40% 0 / 28% 100%, linear-gradient(90deg, transparent, rgba(201,164,92,.6), transparent);
+  animation: dwLine 14s ease-in-out 3s infinite; transition: transform 1.2s cubic-bezier(.3,.7,.2,1); }
+.dw-divider::after { content: ""; position: absolute; left: 50%; top: 1px; width: 8px; height: 8px; background: #E5CD91; box-shadow: 0 0 10px rgba(229,205,145,.65);
+  transform: translateX(-50%) rotate(45deg); transition: transform .8s ease .5s, opacity .8s ease .5s; }
+@keyframes dwLine { 0%,70% { background-position: -40% 0, 0 0; } 100% { background-position: 140% 0, 0 0; } }
+html.dw-js .dw-divider::before { transform: scaleX(0); }
+html.dw-js .dw-divider::after { transform: translateX(-50%) rotate(45deg) scale(0); opacity: 0; }
+html.dw-js .dw-divider.on::before { transform: none; }
+html.dw-js .dw-divider.on::after { transform: translateX(-50%) rotate(45deg); opacity: 1; }
+
+/* ---- 2. Hidden rangoli (scroll par ek baar draw hota hai, phir sthir) ---- */
+.dw-rgwrap { position: absolute; pointer-events: none; z-index: 0; color: #C9A45C; }
+.hero-rg { top: 80px; right: -120px; width: min(44vw, 420px); }
+.pay-rg { top: 60px; right: -190px; width: 380px; }
+.dw-rg { display: block; width: 100%; opacity: .36; transform-origin: 50% 50%; animation: dwRot 120s linear infinite; }
+.pay-rg .dw-rg { opacity: .26; animation-duration: 150s; }
+@keyframes dwRot { to { transform: rotate(360deg); } }
+.dw-rg .d { stroke-dasharray: 1; stroke-dashoffset: 0; }
+html.dw-js .dw-rg { opacity: 0; transition: opacity 2.6s ease; }
+html.dw-js .dw-rg.on { opacity: .36; }
+html.dw-js .pay-rg .dw-rg.on { opacity: .26; }
+html.dw-js .dw-rg .d { stroke-dashoffset: 1; transition: stroke-dashoffset 2.8s cubic-bezier(.4,0,.2,1); transition-delay: calc(var(--i) * .16s); }
+html.dw-js .dw-rg.on .d { stroke-dashoffset: 0; }
+html.dw-js .dw-rg .dt { opacity: 0; transition: opacity 1.8s ease 3s; }
+html.dw-js .dw-rg.on .dt { opacity: 1; }
+
+/* ---- 3. Ek hi sparkle (offer card ke kone par) ---- */
+.dw-spark { position: absolute; top: -9px; right: 34px; width: 20px; height: 20px; z-index: 2; pointer-events: none; color: #FFF1B8;
+  filter: drop-shadow(0 0 5px rgba(229,205,145,.8)); opacity: 0; transform: scale(.5); animation: dwTwinkle 11s ease-in-out 5s infinite; }
+.dw-spark svg { display: block; width: 100%; height: 100%; }
+@keyframes dwTwinkle { 0%,72% { opacity: 0; transform: scale(.5); } 82% { opacity: .95; transform: scale(1); } 92% { opacity: 0; transform: scale(.7); } 100% { opacity: 0; } }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) { .pay-rg { display: none; } }
+@media (max-width: 640px) {
+  .dw-badge { font-size: 12.5px; padding: 6px 13px; }
+  .dw-glow { left: -35%; width: 110vw; }
+
+  /* MOBILE: mini diya -> hero ke bottom-left kone me (padding-bottom ki jagah me, content se door) */
+  .hero-diya { --w: 46px; left: 16px; right: auto; transform: none; bottom: 22px; }
+  .hero-diya2 { --w: 46px; right: 16px; left: auto; bottom: 22px; }
+  .hero-diya svg { filter: drop-shadow(0 4px 6px rgba(0,0,0,.5)); }
+
+  /* MOBILE: rangoli chhota + halka (10-18% opacity), 120s slow rotation, hero ke andar clip */
+  .hero-rg { top: 120px; right: -26vw; width: 54vw; }
+  .dw-rg { animation-duration: 120s; }
+  html.dw-js .dw-rg.on, html.dw-js .hero-rg .dw-rg.on { opacity: .3; }
+  .dw-rg { opacity: .3; }
+}
+@media (max-width: 360px) { .hero-rg { display: none; } }
+/* ===== MOBILE ENHANCEMENTS (sirf phone, <=640px) ===== */
+@media (max-width: 640px) {
+  /* 1. SPECIAL DIWALI OFFER badge: slow breathing champagne glow (5s), size static */
+  .hero-copy .dw-offer { margin-bottom: 18px; }
+}
+@media (max-width: 360px) { .dw-pill { font-size: 10.5px; letter-spacing: .07em; padding: 6px 11px 6px 9px; } }
+   /* bahut chhoti screen par readability ke liye hide */
+
+/* ---- Reduced motion: sab sthir, rangoli seedha dikhta hai ---- */
+@media (prefers-reduced-motion: reduce) {
+  .dw-glow, .dw-sweep::before, .dw-divider::after, .dw-spark, .dw-pill, .dw-pill::after, .dw-diya::before, .dw-fl { animation: none !important; }
+  .dw-pill::after { display: none; }
+  .dw-sweep, .dw-divider::after, .dw-spark { display: none; }
+  html.dw-js .dw-rg, html.dw-js .dw-rg .d, html.dw-js .dw-rg .dt { transition: none; opacity: .36; stroke-dashoffset: 0; animation: none; }
+  .dw-rg { animation: none; }
+  html.dw-js .dw-rg .dt { opacity: 1; }
+}
+
+/* ---- Price box ka yellow tag: "SPECIAL DIWALI OFFER" (wahi font/design) + halki glow ---- */
+body.diwali .tag { text-shadow: 0 0 7px rgba(255,255,255,.75), 0 0 14px rgba(255,236,170,.9);
+  box-shadow: 0 0 14px rgba(250,204,21,.55), 0 0 30px rgba(217,154,67,.35); animation: dwTagGlow 3.4s ease-in-out infinite; }
+@keyframes dwTagGlow {
+  0%,100% { box-shadow: 0 0 12px rgba(250,204,21,.45), 0 0 26px rgba(217,154,67,.28); }
+  50%     { box-shadow: 0 0 20px rgba(250,204,21,.75), 0 0 40px rgba(217,154,67,.45); }
+}
+@media (prefers-reduced-motion: reduce) { body.diwali .tag { animation: none; } }
+
+/* =========================================================
+   FULL-SITE DIWALI ENHANCEMENTS (header, hero, offer strip, sections, pricing, footer)
+   ========================================================= */
+
+/* ---- Header: patli gold line ---- */
+body.diwali header .nav { position: relative; }
+body.diwali header .nav::after { content: ""; position: absolute; left: 18px; right: 18px; bottom: -1px; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(201,164,92,.75), transparent); }
+
+/* ---- Hero: offer badge border + slow breathing glow (sab devices) ---- */
+.dw-pill { white-space: nowrap; border: 1px solid rgba(255,241,184,.55);
+  animation: dwFadeIn .9s ease both, dwPillGlow 5s ease-in-out 1.2s infinite; }
+@keyframes dwPillGlow {
+  0%,100% { box-shadow: 0 4px 14px rgba(201,164,92,.16), 0 0 0 1px rgba(255,248,225,.35) inset; }
+  50%     { box-shadow: 0 6px 24px rgba(217,154,67,.36), 0 0 0 1px rgba(255,248,225,.45) inset; }
+}
+/* ---- Hero: rangoli ke peeche soft gold glow ---- */
+.hero-rg::before { content: ""; position: absolute; inset: -14%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(217,154,67,.24), rgba(201,164,92,.09) 45%, rgba(201,164,92,0) 68%); }
+/* ---- Hero: dusra diya (sirf bade screen, rangoli ke saath balance) ---- */
+.hero-diya2 { right: clamp(14px, 3vw, 48px); left: auto; bottom: 14px; }
+.hero-diya2::before, .hero-diya2 .dw-fl { animation-delay: 1.3s; }
+@media (min-width: 901px) { .hero-diya2 { bottom: auto; top: min(calc(100vh - 230px), calc(100% - 82px)); } }
+/* ---- Hero: neeche warm golden light, dono sire transparent ---- */
+body.diwali #top.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 240px; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 50% at 50% 62%, rgba(217,154,67,.13) 0%, rgba(229,205,145,.06) 42%, rgba(201,164,92,0) 100%);
+  animation: dwHeroLight 12s ease-in-out infinite; }
+@keyframes dwHeroLight { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+
+/* ---- Hero: load par ek chhota sparkle burst (rangoli ke centre se, content ke peeche) ---- */
+.dw-burst { position: absolute; z-index: 0; width: 0; height: 0; pointer-events: none; right: calc(min(44vw, 420px) / 2 - 120px); top: calc(80px + min(44vw, 420px) / 2); }
+.dw-bp { position: absolute; left: 0; top: 0; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: #FFF1B8; opacity: 0;
+  box-shadow: 0 0 8px 1px rgba(229,205,145,.8); animation: dwBurst 1.5s cubic-bezier(.2,.7,.3,1) .7s 1 both; }
+@keyframes dwBurst {
+  0%   { transform: rotate(var(--a)) translateX(0) scale(.7); opacity: 0; }
+  18%  { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--r)) scale(.15); opacity: 0; }
+}
+@media (max-width: 640px) { .dw-burst { right: -1vw; top: calc(120px + 27vw); } }
+
+/* ---- Offer strip (hero ke neeche) ---- */
+.dw-strip { position: relative; z-index: 1; display: flex; justify-content: center; padding: 12px 16px; text-align: center;
+  border-top: 1px solid rgba(201,164,92,.32); border-bottom: 1px solid rgba(201,164,92,.32);
+  background: linear-gradient(90deg, rgba(201,164,92,0), rgba(201,164,92,.15) 20%, rgba(217,154,67,.2) 50%, rgba(201,164,92,.15) 80%, rgba(201,164,92,0)); }
+.dw-strip[hidden] { display: none; }
+.dw-strip span { font-weight: 800; font-size: 13.5px; letter-spacing: .12em; color: #F1E2B4; text-shadow: 0 0 12px rgba(217,154,67,.45); }
+@media (max-width: 640px) { .dw-strip { padding: 10px 12px; } .dw-strip span { font-size: 11.5px; letter-spacing: .07em; line-height: 1.4; } }
+@media (max-width: 360px) { .dw-strip span { font-size: 10.5px; letter-spacing: .04em; } }
+
+/* ---- Section corner ornaments (chhote rangoli fragments, content ke peeche) ---- */
+.dw-orn { position: absolute; width: 72px; height: 72px; pointer-events: none; z-index: 0; opacity: .4;
+  background: url("../assets/icons/orn-corner.svg") no-repeat 0 0 / contain; }
+.dw-orn.tl { top: 8px; left: 8px; }
+.dw-orn.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+.dw-orn.br { bottom: 8px; right: 8px; transform: scale(-1); }
+.dw-orn.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+.pay .dw-orn { width: 54px; height: 54px; top: 10px; right: 10px; }
+.site-footer .dw-orn { width: 54px; height: 54px; top: 6px; right: 6px; }
+html.dw-js .dw-orn { opacity: 0; transition: opacity 1.6s ease; }
+html.dw-js .dw-orn.on { opacity: .4; }
+@media (max-width: 640px) { .dw-orn { width: 44px; height: 44px; } .pay .dw-orn, .site-footer .dw-orn { width: 38px; height: 38px; } }
+
+/* ---- Cards: patli gold edge + halka warm glow; desktop hover par roshni ---- */
+body.diwali .card.stat, body.diwali .card.feat, body.diwali .card.t { border-color: rgba(201,164,92,.24); box-shadow: 0 0 24px rgba(217,154,67,.06); }
+@media (hover: hover) { body.diwali .card:hover { border-color: rgba(201,164,92,.5); box-shadow: 0 10px 34px rgba(217,154,67,.16); } }
+
+/* ---- Pricing: gold border/glow, entry par ek baar ---- */
+body.diwali .pay { border-color: rgba(201,164,92,.55); background: linear-gradient(180deg, rgba(201,164,92,.10), var(--card) 45%); box-shadow: 0 0 40px rgba(217,154,67,.10); }
+body.diwali .pay::before { background: linear-gradient(90deg, transparent, #E5CD91, transparent); box-shadow: 0 0 18px 2px rgba(201,164,92,.45); }
+body.diwali .pay::after { content: ""; position: absolute; inset: -34px; z-index: -1; border-radius: 52px; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(217,154,67,.2), rgba(217,154,67,0)); opacity: 0; transition: opacity 1.8s ease; }
+body.diwali .pay.dw-in::after, html:not(.dw-js) body.diwali .pay::after { opacity: 1; }
+html.dw-js .pay .dw-offer { opacity: 0; transition: opacity 1s ease .3s; }
+html.dw-js .pay.dw-in .dw-offer { opacity: 1; }
+/* Pay button: gold shimmer har ~8 sec (text shimmer ke upar) */
+body.diwali #payBtn { isolation: isolate; outline: 1px solid rgba(229,205,145,.4); outline-offset: -1px; }
+body.diwali #payBtn::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(100deg, transparent 35%, rgba(255,241,184,.45) 50%, transparent 65%); transform: translateX(-120%); animation: dwBtnShine 8s ease-in-out 2s infinite; }
+@keyframes dwBtnShine { 0%,70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+
+/* ---- Footer: warm glow + gold top line + center diamond ---- */
+body.diwali footer.site-footer { background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(217,154,67,.13), rgba(217,154,67,0) 70%), linear-gradient(180deg, rgba(124,58,237,.10), rgba(8,8,14,.95) 60%); }
+body.diwali footer.site-footer::before { background: linear-gradient(90deg, transparent, #C9A45C, #E5CD91, #C9A45C, transparent); box-shadow: 0 0 14px rgba(201,164,92,.5); animation: none; }
+.dw-fdia { position: absolute; top: 0; left: 50%; width: 9px; height: 9px; background: #E5CD91; box-shadow: 0 0 12px rgba(229,205,145,.7); z-index: 2; pointer-events: none;
+  transform: translate(-50%, -50%) rotate(45deg); }
+html.dw-js .dw-fdia { opacity: 0; transition: opacity 1.2s ease; }
+html.dw-js .dw-fdia.on { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dw-pill, body.diwali #payBtn::before, body.diwali #top.hero::after, .dw-divider::before { animation: none !important; }
+  .dw-burst { display: none; }
+  html.dw-js .dw-divider::before, html.dw-js .dw-divider::after, html.dw-js .dw-orn, html.dw-js .dw-fdia, body.diwali .pay::after, html.dw-js .pay .dw-offer { transition: none; }
+}
+
+
+/* =========================================================
+   LIGHT FESTIVAL UPGRADE  (diyas, pools of light, stars)
+   js/diwali-lights.js diyas/stars banata hai; yahan sirf styling hai
+   ========================================================= */
+
+/* ---- Strip: deep purple + illuminated gold border + shimmer + diya icon ---- */
+body.diwali .dw-strip { overflow: hidden; background: linear-gradient(180deg, #24124d, #150a32 70%, #1b0e40);
+  border-top: 1px solid rgba(229,205,145,.75); border-bottom: 1px solid rgba(201,164,92,.6);
+  box-shadow: 0 0 26px rgba(217,154,67,.28), inset 0 -10px 26px rgba(217,154,67,.1); }
+body.diwali .dw-strip::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 28%; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,241,184,.14), transparent); transform: translateX(-130%) skewX(-16deg); animation: dwStripShine 9s ease-in-out 2s infinite; }
+@keyframes dwStripShine { 0%,60% { transform: translateX(-130%) skewX(-16deg); } 100% { transform: translateX(480%) skewX(-16deg); } }
+.dw-strip span { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 9px; }
+.dwd-ic { display: inline-block; width: 26px; flex: none; filter: drop-shadow(0 0 8px rgba(255,176,60,.9)); }
+.dwd-ic svg { display: block; width: 100%; }
+.dwd-ic .dw-fl { transform-box: fill-box; transform-origin: 50% 100%; animation: dwFlick 2s ease-in-out infinite; }
+
+/* ---- Diyas: zyada glow + aas-paas ki roshni ---- */
+.dw-diya::before { background: radial-gradient(circle, rgba(255,176,60,.46), rgba(255,176,60,0) 62%); }
+.dw-diya::after { content: ""; position: absolute; left: 50%; top: calc(var(--w) * -1.4); width: calc(var(--w) * 4.2); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; pointer-events: none; z-index: -1;
+  background: radial-gradient(circle, rgba(217,154,67,.2), rgba(217,154,67,0) 66%); }
+.dwd-offer { --w: 58px; left: clamp(10px, 3vw, 50px); bottom: 44px; display: none; }
+.dwd-rev   { --w: 54px; right: clamp(10px, 3vw, 50px); bottom: 70px; display: none; }
+.dwd-pay   { --w: 64px; right: calc(50% - 245px - 100px); bottom: 70px; display: none; }
+.dwd-dv    { --w: 28px; bottom: -3px; }
+.dwd-dv.l  { left: -42px; } .dwd-dv.r { right: -42px; }
+.dwd-dv .dw-fl, .dwd-dv.r::before, .dwd-dv.r .dw-fl { animation-delay: .7s; }
+.dwd-ft    { --w: 50px; bottom: 26px; }
+.dwd-ft.l  { left: clamp(12px, 4vw, 70px); } .dwd-ft.r { right: clamp(12px, 4vw, 70px); }
+.dwd-ft.r::before, .dwd-ft.r .dw-fl, .dwd-pay .dw-fl { animation-delay: 1.1s; }
+@media (min-width: 1100px) { .dwd-offer, .dwd-rev { display: block; } }
+@media (min-width: 901px) { .dwd-pay { display: block; } }
+@media (max-width: 640px) {
+  .dwd-dv { --w: 22px; } .dwd-dv.l { left: -28px; } .dwd-dv.r { right: -28px; }
+  .dwd-ft { --w: 32px; bottom: 100px; } .dwd-ft.l { left: 12px; } .dwd-ft.r { right: 12px; }
+}
+
+/* ---- Twinkle stars ---- */
+.dw-tw { position: absolute; z-index: 1; pointer-events: none; color: #FFF1B8; opacity: 0; filter: drop-shadow(0 0 5px rgba(255,226,150,.9));
+  animation: dwTw2 var(--t, 10s) ease-in-out var(--d, 0s) infinite; }
+.dw-tw svg { display: block; width: 100%; height: 100%; }
+@keyframes dwTw2 { 0%,60% { opacity: 0; transform: scale(.4) rotate(0); } 72% { opacity: 1; transform: scale(1) rotate(25deg); } 86% { opacity: 0; transform: scale(.5) rotate(45deg); } 100% { opacity: 0; } }
+
+/* ---- Ambient light pools (har section ka alag composition) ---- */
+body.diwali #top.hero { background-image:
+  radial-gradient(55% 45% at 50% 34%, rgba(217,154,67,.17), rgba(217,154,67,0) 72%),
+  radial-gradient(38% 38% at 88% 12%, rgba(229,205,145,.13), rgba(229,205,145,0) 70%),
+  radial-gradient(40% 18% at 8% 80%, rgba(255,160,60,.2), rgba(255,160,60,0) 72%),
+  radial-gradient(40% 18% at 92% 80%, rgba(255,160,60,.17), rgba(255,160,60,0) 72%); }
+body.diwali #offer { background-image:
+  radial-gradient(50% 20% at 0% 80%, rgba(217,154,67,.22), rgba(217,154,67,0) 72%),
+  radial-gradient(45% 20% at 100% 20%, rgba(229,205,145,.14), rgba(229,205,145,0) 70%),
+  radial-gradient(60% 45% at 50% 50%, rgba(217,154,67,.07), rgba(217,154,67,0) 75%); }
+body.diwali #reviews { background-image:
+  radial-gradient(60% 12% at 50% 13%, rgba(217,154,67,.22), rgba(217,154,67,0) 75%),
+  radial-gradient(45% 18% at 100% 80%, rgba(255,160,60,.19), rgba(255,160,60,0) 72%),
+  radial-gradient(40% 34% at 0% 55%, rgba(229,205,145,.1), rgba(229,205,145,0) 72%); }
+body.diwali #payment-section { background-image:
+  radial-gradient(62% 40% at 50% 46%, rgba(217,154,67,.22), rgba(217,154,67,0) 72%),
+  radial-gradient(40% 16% at 0% 82%, rgba(255,160,60,.2), rgba(255,160,60,0) 72%),
+  radial-gradient(40% 16% at 100% 82%, rgba(255,160,60,.2), rgba(255,160,60,0) 72%); }
+body.diwali .dw-sec-final { background-image: radial-gradient(60% 70% at 50% 60%, rgba(217,154,67,.16), rgba(217,154,67,0) 72%); }
+/* headings ke peeche halki roshni */
+body.diwali .section h2, body.diwali .sp-title { position: relative; }
+body.diwali .section h2::before, body.diwali .sp-title::before { content: ""; position: absolute; left: 50%; top: 50%; width: min(640px, 110%); height: 210%; transform: translate(-50%, -50%); z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(217,154,67,.2), rgba(217,154,67,0)); }
+
+/* ---- Header: brighter line + warm glow ---- */
+body.diwali header .nav { box-shadow: 0 8px 28px rgba(217,154,67,.14); }
+body.diwali header .nav::after { height: 1.5px; background: linear-gradient(90deg, transparent, #E5CD91, #FFF1B8, #E5CD91, transparent); box-shadow: 0 0 10px rgba(229,205,145,.6); }
+
+/* ---- Hero CTA aur pricing: zyada roshni ---- */
+body.diwali #top .btn.btn-gold { box-shadow: 0 0 0 1px rgba(255,241,184,.4), 0 10px 40px rgba(217,154,67,.5), 0 0 60px rgba(217,154,67,.25); }
+body.diwali .pay { border-color: rgba(229,205,145,.7); box-shadow: 0 0 46px rgba(217,154,67,.2), 0 0 0 1px rgba(255,241,184,.1) inset; }
+body.diwali .pay::after { background: radial-gradient(closest-side, rgba(217,154,67,.36), rgba(217,154,67,0)); inset: -44px; }
+body.diwali .card.stat, body.diwali .card.feat, body.diwali .card.t { border-color: rgba(201,164,92,.34); box-shadow: 0 0 30px rgba(217,154,67,.11), inset 0 0 26px rgba(217,154,67,.04); }
+
+/* ---- Footer: bhaari light ---- */
+body.diwali footer.site-footer { background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(217,154,67,.22), rgba(217,154,67,0) 72%), radial-gradient(40% 22% at 0% 78%, rgba(255,160,60,.18), rgba(255,160,60,0) 72%), radial-gradient(40% 22% at 100% 78%, rgba(255,160,60,.18), rgba(255,160,60,0) 72%), linear-gradient(180deg, rgba(124,58,237,.10), rgba(8,8,14,.95) 60%); }
+@media (max-width: 900px) { body.diwali footer.site-footer::after { animation: none; display: none; } }   /* heavy sweep phone par band */
+
+@media (prefers-reduced-motion: reduce) {
+  body.diwali .dw-strip::after, .dwd-ic .dw-fl, .dw-tw { animation: none !important; }
+  .dw-tw { display: none; }
+}
+
+/* overflow guard: glow/ornaments se horizontal scroll na bane (sticky header par asar nahi) */
+body.diwali section, body.diwali footer.site-footer { overflow-x: clip; }
+.dwd-dv::before, .dwd-dv::after { display: none; }
+
